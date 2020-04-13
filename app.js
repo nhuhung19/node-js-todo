@@ -34,13 +34,13 @@ function addTodo(todoBody, todoStatus, id) {
     if(data.length === 0){
         id = 1
         saveData({ todo: todoBody, status: todoStatus, id: id })
-        console.log(chalk.green.bold(`added ${todoStatus}`))
+        console.log(chalk.green.bold(`added ${todoBody}`))
     } else{
-        console.log(data[data.length -1].id++)
-        id = data[data.length -1].id++
-        console.log(id)
+        data[data.length -1].id++
+        id = data[data.length -1].id
+        // console.log(id)
         saveData({ todo: todoBody, status: todoStatus, id: id })
-        console.log(chalk.green.bold(`added ${todoStatus}`))
+        console.log(chalk.green.bold(`added ${todoBody}`))
     }
 }
 
